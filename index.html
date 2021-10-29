@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./dist/main.css" />
+    <script src="./dist/main.js"></script>
+    <title>Gasparilla</title>
+</head>
+
+<body>
+    <canvas id="game-canvas" style='position:absolute; left:0px; top:0px;'></canvas>
+
+    <script>
+        (function() {
+            
+            // Obtain a reference to the canvas element using its id.
+            const htmlCanvas = document.getElementById('game-canvas');
+            // Obtain a graphics context on the canvas element for drawing.
+            const context = htmlCanvas.getContext('2d');
+    
+           // Start listening to resize events and draw canvas.
+           initialize();
+    
+           function initialize() {
+               // Register an event listener to call the resizeCanvas() function 
+               // each time the window is resized.
+               window.addEventListener('resize', resizeCanvas, false);
+               // Draw canvas border for the first time.
+               resizeCanvas();
+            }
+    
+            // Display custom canvas. In this case it's a blue, 5 pixel 
+            // border that resizes along with the browser window.
+            function redraw() {
+                const waterTile = new Image();
+                waterTile.src = './src/assets/tiles_sheet.png'
+                console.log(waterTile);
+                waterTile.onload = function() {
+                for(let i = 0; i < window.innerWidth; i += 64) {
+                    for(let j = 0; j < window.innerHeight; j += 64) {
+                        context.drawImage(waterTile, 512, 256, 64, 64, i, j, 64, 64);
+                        }
+                    }
+                }
+            }
+    
+            // Runs each time the DOM window resize event fires.
+            // Resets the canvas dimensions to match window,
+            // then draws the new borders accordingly.
+            function resizeCanvas() {
+                htmlCanvas.width = window.innerWidth;
+                htmlCanvas.height = window.innerHeight;
+                redraw();
+            }
+        })();    
+        </script>
+</body>
+
+</html>
