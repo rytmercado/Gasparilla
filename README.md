@@ -19,11 +19,11 @@ A rogue-like naval battle game made with vanilla JS, CSS and HTML.
 ### Maps will be rendered using a freely available 2D pixel art pack on a canvas element. https://www.kenney.nl/assets/pirate-pack
 
 ## In addition, this project will include: <a name="description"></a>
-A production README
-Instructions to access and play the game
-Nav links to include links to this project's Github repo and LinkedIn.
-Game controls to turn on/off music, pause/restart the game, and access ship upgrades.
-As a future addition, I would like to provide a map editor.
+#### A production README
+#### Instructions to access and play the game
+#### Nav links to include links to this project's Github repo and LinkedIn.
+#### Game controls to turn on/off music, pause/restart the game, and access ship upgrades.
+#### As a future addition, I would like to provide a map editor.
 ## Installation <a name="installation"></a>
 In progress.
 ## Technologies <a name="technologies"></a>
