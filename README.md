@@ -6,11 +6,12 @@ A rogue-like naval battle game made with vanilla JS, CSS and HTML.
 2. [Additional Features](#installation)
 3. [Wireframe](#wireframe)
 4. [Technologies](#technologies)
-5. [Contributions](#contributions)
-6. [Illustrations](#illustrations)
-7. [Questions](#questions)
-8. [Status](#status)
-9. [Sources](#sources)
+5. [Implementation Timeline](#implementation-timeline)
+6. [Contributions](#contributions)
+7. [Illustrations](#illustrations)
+8. [Questions](#questions)
+9. [Status](#status)
+10. [Sources](#sources)
 
 ## In Gasparilla, users will be able to: <a name="description"></a>
 #### Control a pirate ship in a rogue-like naval battle game made, in order to defeat foes and plunder booty.
@@ -26,7 +27,7 @@ A rogue-like naval battle game made with vanilla JS, CSS and HTML.
 #### As a future addition, I would like to provide a map editor.
 
 ## Wireframe
-<a href="https://wireframe.cc/XGtcz2">Link here!</a>
+ <img width="1022" alt="wireframe" src="https://user-images.githubusercontent.com/83959916/139467139-3f5f4d20-49c2-4f17-a2bb-fec3b009249e.png">
 
 ## Technologies <a name="technologies"></a>
 #### -HTML
@@ -34,10 +35,23 @@ A rogue-like naval battle game made with vanilla JS, CSS and HTML.
 #### -CSS
 #### -Rot.js
 
-
+## Implementation Timeline <a name="implementation-timeline"></a>
+#### 10/29/21 - 10/31/21
+Develop algorithm to for procedurally generated maps with rot.js, render grid on canvas element, render moving objects on canvas, collision.
+#### 11/1/21
+Tie sprite vector to map generation matrix to render map png's on canvas, as well as moving objects.
+#### 11/2/21
+Develop leveling/xp structure, game tuning for implementation.
+#### 11/3/21
+Tidy up styling, add rpg elements.
+#### 11/4/21
+final bug testing, deploy, finalize readme.
+#### -Javascript
+#### -CSS
+#### -Rot.js
 ## Contributions <a name="contributions"></a>
 ##### You can make contributions to my project here! 
- <a type="button" href="https://github.com/rytmercado">Contribute Here</a>
+ <a href="https://github.com/rytmercado">Contribute Here</a>
 ## Illustrations <a name="illustrations"></a>
 In progress.
 ## Questions <a name="questions"></a>
@@ -45,3 +59,4 @@ In progress.
 ## Status <a name="status"></a>
 In progress.
 ## Sources <a name="sources"></a>
+In progress.
