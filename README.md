@@ -4,8 +4,8 @@ A rogue-like naval battle game made with vanilla JS, CSS and HTML.
 ## Table of Contents
 1. [Description](#description)
 2. [Additional Features](#installation)
-3. [Technologies](#technologies)
-4. [License](#license)
+3. [Wireframe](#wireframe)
+4. [Technologies](#technologies)
 5. [Contributions](#contributions)
 6. [Illustrations](#illustrations)
 7. [Questions](#questions)
@@ -24,13 +24,17 @@ A rogue-like naval battle game made with vanilla JS, CSS and HTML.
 #### Nav links to include links to this project's Github repo and LinkedIn.
 #### Game controls to turn on/off music, pause/restart the game, and access ship upgrades.
 #### As a future addition, I would like to provide a map editor.
-## Installation <a name="installation"></a>
-In progress.
+
+## Wireframe
+<a href="https://wireframe.cc/XGtcz2">Link here!</a>
+
 ## Technologies <a name="technologies"></a>
 #### -HTML
 #### -Javascript
 #### -CSS
 #### -Rot.js
+
+
 ## Contributions <a name="contributions"></a>
 ##### You can make contributions to my project here! 
  <a type="button" href="https://github.com/rytmercado">Contribute Here</a>
