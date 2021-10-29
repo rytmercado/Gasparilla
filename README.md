@@ -16,7 +16,9 @@ A rogue-like naval battle game made with vanilla JS, CSS and HTML.
 Control a pirate ship in a rogue-like naval battle game made, in order to defeat foes and plunder booty.
 As you complete progressively more difficult levels, you will be able to upgrade attributes of your ship.
 Maps will be procedurally generated using rot.js https://ondras.github.io/rot.js/hp/
+
 Maps will be rendered using a freely available 2D pixel art pack on a canvas element. https://www.kenney.nl/assets/pirate-pack
+
 ## In addition, this project will include: <a name="description"></a>
 A production README
 Instructions to access and play the game
