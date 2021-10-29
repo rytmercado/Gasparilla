@@ -46,6 +46,7 @@ Develop leveling/xp structure, game tuning for implementation.
 Tidy up styling, add rpg elements.
 #### 11/4/21
 final bug testing, deploy, finalize readme.
+## Technologies <a name="technologies"></a>
 #### -Javascript
 #### -CSS
 #### -Rot.js
