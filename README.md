@@ -33,7 +33,7 @@ In progress.
 #### -Rot.js
 ## Contributions <a name="contributions"></a>
 ##### You can make contributions to my project here! 
- <button target=_blank href="https://github.com/rytmercado">Contribute Here</button>
+ <a type="button" href="https://github.com/rytmercado">Contribute Here</a>
 ## Illustrations <a name="illustrations"></a>
 In progress.
 ## Questions <a name="questions"></a>
