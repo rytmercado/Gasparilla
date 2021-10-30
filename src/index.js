@@ -20,7 +20,7 @@ window.addEventListener('DOMContentLoaded', function() {
         setInterval(function() {
             console.log('test')
             redraw();
-            y += 3;
+            y ++;
             if (y > window.innerHeight) {
                 y = -64;
             }
@@ -39,7 +39,15 @@ window.addEventListener('DOMContentLoaded', function() {
         waterTile.onload = function() {
         for(let i = 0; i < window.innerWidth; i += 64) {
             for(let j = 0; j < window.innerHeight; j += 64) {
-                context.drawImage(waterTile, 512, 256, 64, 64, i, j, 64, 64);
+                let drawX = i + x;
+                let drawY = j + y;
+                if (drawX > window.innerWidth) {
+                    x = -64;
+                }
+                if (drawY > window.innerHeight) {
+                    y= -64;
+                }
+                context.drawImage(waterTile, 512, 256, 64, 64, i + x, j + y, 64, 64);
                 }
             }
         }
@@ -51,7 +59,7 @@ window.addEventListener('DOMContentLoaded', function() {
         const playerBoat = new Image();
         playerBoat.src = './src/assets/ships_sheet.png';
         playerBoat.onload = function() {
-            context.drawImage(playerBoat, 204, 114, 66, 113, x, y, 33, 56)
+            context.drawImage(playerBoat, 204, 114, 66, 113, (window.innerHeight / 2), (window.innerWidth / 2), 33, 56)
         }
     }
 
