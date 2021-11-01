@@ -1,12 +1,13 @@
-import MovingObject from './moving_object';
+import PlayerShip from './player_ship'
 
 export default class Game {
 
     constructor() {
-        this.playerShip = new MovingObject(
+        this.playerShip = new PlayerShip(
             {
                 pos: [300, 300],
-                vel: [1,1],
+                vel: [0,0],
+                facing: 0,
                 src: './src/assets/ships_sheet.png',
                 game: this
             }
