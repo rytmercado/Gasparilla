@@ -10,16 +10,16 @@ export default class PlayerShip extends MovingObject {
         window.addEventListener('keydown', (event) => {
             switch(event.key) {
                 case 'w':
-                    this.changeVel([0,-1]);
+                    this.changeVel(1);
                     break;
                 case 'a':
-                    this.changeVel([-1,0])
+                    this.changeFacing(-1);
                     break;
                 case 's':
-                    this.changeVel([0,1]);
+                    this.changeVel(-1);
                     break;
                 case 'd':
-                    this.changeVel([1,0]);
+                    this.changeFacing(1);
             }
             // console.log(key)
         })

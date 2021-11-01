@@ -1,12 +1,13 @@
 export default class GameView {
-
+    
     constructor(canvas, game) {
         this.canvas = canvas;
         this.context = canvas.getContext('2d');
         this.game = game;
+        this.playerBoatImage = new Image();
         this.initialize();
     }
-
+    
     initialize() {
         window.addEventListener('resize', () => {
             this.resizeCanvas();
@@ -15,19 +16,17 @@ export default class GameView {
         this.game.start();
         let x = 300;
         let y = 300;
-
-
-        // this.redraw();
+        
+        
         setInterval(() => {
             this.game.step();
-            this.redraw();
             this.drawShip(this.game.playerShip.pos[0],this.game.playerShip.pos[1]);
             y+=3;
-
-
-        }, 20);
+            
+            
+        }, 1000/60);
     }
-
+    
     redraw() {
         const waterTile = new Image();
         // console.log(waterTile);
@@ -40,17 +39,27 @@ export default class GameView {
             }
         }
         waterTile.src = './src/assets/tiles_sheet.png';
-
+        
     }
-
+    
     drawShip(x,y) {
-        const playerBoat = new Image();
-        playerBoat.onload = () => {
-            this.context.drawImage(playerBoat, 204, 114, 66, 113, x, y, 33, 56)
-        }
-        playerBoat.src = this.game.playerShip.src;
-    }
+        // this.context.clearRect(0,0,this.canvas.width,this.canvas.height);
+        // this.context.clearRect(0,0,this.canvas.width,this.canvas.height);
+        // this.context.save();
+        this.redraw();
+        // this.context.translate(this.game.playerShip.pos[0],this.game.playerShip.pos[1]);
+        // this.context.rotate(this.game.playerShip.facing*Math.PI/180);
+        
+        // this.redraw();
+        this.playerBoatImage.onload = () => {
 
+            this.context.drawImage(this.playerBoatImage, 204, 114, 66, 113,x,y, 33, 56)
+        }
+        // console.log(this.game.playerShip.pos[0])
+        this.playerBoatImage.src = this.game.playerShip.src;
+        // this.context.restore();
+    }
+    
     resizeCanvas() {
         this.canvas.width = window.innerWidth;
         this.canvas.height = window.innerHeight;

@@ -8,12 +8,17 @@ export default class MovingObject {
     }
 
     move(){
-        this.pos[0] += this.vel[0];
-        this.pos[1] += this.vel[1];
+        this.pos[0] = this.pos[0] + Math.sin(this.facing * Math.PI / 180) * this.vel;
+        this.pos[1] = this.pos[1] - Math.cos(this.facing * Math.PI / 180) * this.vel;
+        
     }
 
     changeVel(dv){
-        this.vel[0] += dv[0];
-        this.vel[1] += dv[1];
+        this.vel += dv;
+    }
+
+    changeFacing(df){
+        this.facing += df;
+        this.facing = this.facing % 360;
     }
 }
