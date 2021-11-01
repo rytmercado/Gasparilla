@@ -44,20 +44,20 @@ export default class GameView {
     
     drawShip(x,y) {
         // this.context.clearRect(0,0,this.canvas.width,this.canvas.height);
-        // this.context.clearRect(0,0,this.canvas.width,this.canvas.height);
-        // this.context.save();
+        this.context.clearRect(0,0,this.canvas.width,this.canvas.height);
+        this.context.save();
         this.redraw();
-        // this.context.translate(this.game.playerShip.pos[0],this.game.playerShip.pos[1]);
-        // this.context.rotate(this.game.playerShip.facing*Math.PI/180);
         
         // this.redraw();
+        this.playerBoatImage.src = this.game.playerShip.src;
         this.playerBoatImage.onload = () => {
-
+            
             this.context.drawImage(this.playerBoatImage, 204, 114, 66, 113,x,y, 33, 56)
+            this.context.translate(this.game.playerShip.pos[0],this.game.playerShip.pos[1]);
+            this.context.rotate(this.game.playerShip.facing*Math.PI/180);
         }
         // console.log(this.game.playerShip.pos[0])
-        this.playerBoatImage.src = this.game.playerShip.src;
-        // this.context.restore();
+        this.context.restore();
     }
     
     resizeCanvas() {
