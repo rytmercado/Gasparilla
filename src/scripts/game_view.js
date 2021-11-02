@@ -14,14 +14,16 @@ export default class GameView {
         }, false);
         this.resizeCanvas();
         this.game.start();
+        // console.log(this.game.stringMap());
         
-        
-        setInterval(() => {
-            this.game.step();
-            this.drawShip(this.game.playerShip.pos[0],this.game.playerShip.pos[1]);
-            
-            
-        }, 1);
+        requestAnimationFrame(this.animate.bind(this));
+    }
+
+    animate() {
+        this.game.step();
+        this.redraw();
+        this.drawShip(this.game.playerShip.pos[0],this.game.playerShip.pos[1]);
+        requestAnimationFrame(this.animate.bind(this));
     }
     
     redraw() {
@@ -33,7 +35,7 @@ export default class GameView {
                 for(let j = 0; j < window.innerHeight; j += 32) {
                     // console.log(window.innerWidth);
                     this.context.drawImage(waterTile, 512, 256, 64, 64, i, j, 32, 32);
-                }
+                } 
             }
         }
         
@@ -41,12 +43,11 @@ export default class GameView {
     
     drawShip(x,y) {
         // this.context.clearRect(0,0,this.canvas.width,this.canvas.height);
-        this.context.clearRect(0,0,this.canvas.width,this.canvas.height);
+        // this.context.clearRect(0,0,this.canvas.width,this.canvas.height);
         // this.context.save();
         this.redraw();
         
         // this.redraw();
-        this.playerBoatImage.src = this.game.playerShip.src;
         this.playerBoatImage.onload = () => {
             
             this.context.drawImage(this.playerBoatImage, 204, 114, 66, 113,x,y, 33, 56)
@@ -54,6 +55,7 @@ export default class GameView {
             // this.context.rotate(this.game.playerShip.heading*Math.PI/180);
         }
         // console.log(this.game.playerShip.pos[0])
+        this.playerBoatImage.src = this.game.playerShip.src;
         // this.context.translate(0,0)
         // this.context.restore();
     }
@@ -63,6 +65,4 @@ export default class GameView {
         this.canvas.height = window.innerHeight;
         this.redraw();
     }
-    
-
 }
