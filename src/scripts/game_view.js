@@ -35,7 +35,7 @@ export default class GameView {
                 for(let j = 0; j < (window.innerHeight/32); j += 1) {
                     // console.log(window.innerWidth);
                     this.context.drawImage(waterTile, 512, 256, 64, 64, i*32, j*32, 32, 32);
-                    if (i > 1824/32 || j > 26 || i < 2 || j < 2) {
+                    if (i > 1824/32 || j > 26 || i < 2 || j < 2 || this.game.map[j][i] === 1) {
                         this.context.drawImage(waterTile, 64, 64, 64, 64, i*32, j*32, 32, 32);
                     }
                 } 
