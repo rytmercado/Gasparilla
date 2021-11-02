@@ -7,7 +7,7 @@ export default class Game {
             {
                 pos: [300, 300],
                 vel: 0,
-                facing: 120,
+                heading: 120,
                 src: './src/assets/ships_sheet.png',
                 game: this
             }
