@@ -61,8 +61,5 @@ export default class Game {
         this.playerShip.move();
     }
 
-    stringMap(){
-        // return this.map.stringBuilder();
-    }
 }
 

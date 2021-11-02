@@ -21,7 +21,6 @@ export default class PlayerShip extends MovingObject {
                 case 'd':
                     this.changeFacing(1);
             }
-            // console.log(key)
         })
     }
 }

@@ -10,10 +10,10 @@ export default class MovingObject {
     move(){
         this.pos[0] = (this.pos[0] + Math.sin(this.heading * Math.PI / 180) * this.vel) % 1920;
         this.pos[1] = (this.pos[1] - Math.cos(this.heading * Math.PI / 180) * this.vel) % window.innerHeight;
-        if (this.pos[0] < 0) {
+        if (this.pos[0] <= 0) {
             this.pos[0] = 1080;
         }
-        if (this.pos[1] < 0) {
+        if (this.pos[1] <= 0) {
             this.pos[1] = 1920;
         }
         
