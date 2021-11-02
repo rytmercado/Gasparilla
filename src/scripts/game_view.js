@@ -21,7 +21,6 @@ export default class GameView {
 
     animate() {
         this.game.step();
-        // this.resizeCanvas(); 
         this.redraw();
         this.drawShip(this.game.playerShip.pos[0],this.game.playerShip.pos[1]);
         requestAnimationFrame(this.animate.bind(this));
@@ -42,7 +41,7 @@ export default class GameView {
                         // left top right bottom
                         if (this.game.map[j][i-1] === 1 && this.game.map[j-1][i] === 1 && this.game.map[j][i+1] === 1 && this.game.map[j+1][i] === 0){
                             this.context.drawImage(waterTile, 64, 128, 64, 64, i*32, j*32, 32, 32); // top left right
-                        } else if (this.game.map[j][i-1] === 1 && this.game.map[j-1][i] === 1 && this.game.map[j][i+1] === 0 && this.game.map[j+1][i] === 0) {
+                        } if (this.game.map[j][i-1] === 1 && this.game.map[j-1][i] === 1 && this.game.map[j][i+1] === 0 && this.game.map[j+1][i] === 0) {
                             this.context.drawImage(waterTile, 128, 128, 64, 64, i*32, j*32, 32, 32);
                         } else if (this.game.map[j][i-1] === 1 && this.game.map[j-1][i] === 1 && this.game.map[j][i+1] === 1 && this.game.map[j+1][i] === 1) {
                             this.context.drawImage(waterTile, 64*3, 64*4, 64, 64, i*32, j*32, 32, 32); 
@@ -62,8 +61,6 @@ export default class GameView {
                         //     this.context.drawImage(waterTile, 64*3, 64*4, 64, 64, i*32, j*32, 32, 32);
                         // } if (i > 40) {
                         //     this.context.drawImage(waterTile, 64*3, 64*4, 64, 64, i*32, j*32, 32, 32)
-                        } else {
-                            this.context.drawImage(waterTile, 64*3, 64*4, 64, 64, i*32, j*32, 32, 32);
                         }
                     }
                 } 
