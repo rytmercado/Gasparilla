@@ -31,10 +31,10 @@ export default class GameView {
         // console.log(waterTile);
         waterTile.src = './src/assets/tiles_sheet.png';
         waterTile.onload = () => {
-            for(let i = 0; i < window.innerWidth; i += 32) {
-                for(let j = 0; j < window.innerHeight; j += 32) {
+            for(let i = 0; i < (window.innerWidth/32); i += 1) {
+                for(let j = 0; j < (window.innerHeight/32); j += 1) {
                     // console.log(window.innerWidth);
-                    this.context.drawImage(waterTile, 512, 256, 64, 64, i, j, 32, 32);
+                    this.context.drawImage(waterTile, 512, 256, 64, 64, i*32, j*32, 32, 32);
                 } 
             }
         }
