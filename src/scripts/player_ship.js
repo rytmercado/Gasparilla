@@ -4,7 +4,7 @@ export default class PlayerShip extends MovingObject {
     constructor(options) {
         super(options);
         this.playerScore = 0;
-        this.playerHealth = 10;
+        this.playerHealth = 1;
         this.bind_keys();
     }
 

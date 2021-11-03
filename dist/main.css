@@ -116,3 +116,12 @@ html, body {
   display: block;
   /* No floating content on sides */
 }
+
+#game-canvas {
+  z-index: -1;
+}
+
+@font-face {
+  font-family: "Deadhand";
+  src: url("./assets/TreasureMapDeadhand-yLA3.ttf") format("truetype");
+}

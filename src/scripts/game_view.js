@@ -10,9 +10,7 @@ export default class GameView {
     }
     
     initialize() {
-        this.game.start();   
-        console.log(this.game.map.length);
-        console.log(this.game.map[0].length);
+        this.game.start();
         requestAnimationFrame(this.animate.bind(this));
     }
     
@@ -25,7 +23,7 @@ export default class GameView {
         this.drawTreasure();
         requestAnimationFrame(this.animate.bind(this));
         } else {
-            // render game win or game lose page
+            this.gameOverScreen();
         }
     }
     
@@ -77,6 +75,10 @@ export default class GameView {
             this.context.drawImage(this.playerBoatImage, 204, 114, 66, 113,x,y, 33, 56)
         }
         this.playerBoatImage.src = this.game.playerShip.src;
+        this.drawHealthBar(x,y);
+    }
+
+    drawHealthBar(x,y) {
         this.context.beginPath();
         this.context.lineWidth = 8
         this.context.strokeStyle = '#ff0000'
@@ -91,6 +93,7 @@ export default class GameView {
         let playerHealth = this.game.playerShip.playerHealth * 5;
         this.context.lineTo((x-10) + playerHealth, y-10);
         this.context.stroke();
+
     }
     
     drawTreasure(){
@@ -115,4 +118,42 @@ export default class GameView {
         this.canvas.height = window.innerHeight;
         this.redraw();
     }
+
+    gameOverScreen() {
+        const gameOverCanvas = document.createElement("CANVAS");
+        const ctx = gameOverCanvas.getContext('2d');
+        gameOverCanvas.width = 1920;
+        gameOverCanvas.height = 1088;
+        gameOverCanvas.position = 'absolute'
+        gameOverCanvas.style.opacity = .0;
+        gameOverCanvas.style.backgroundColor = 'black'
+        document.body.append(gameOverCanvas);
+        const bgFade = setInterval(() => {
+            gameOverCanvas.style.opacity = parseFloat(gameOverCanvas.style.opacity) + .03;
+            if (parseFloat(gameOverCanvas.style.opacity) >= 1) {
+                clearInterval(bgFade);
+            }
+        }, 20);
+        // this.gameOverTxt(ctx);
+        gameOverCanvas.style.fontFamily = "Deadhand";
+        gameOverCanvas.style.fontSize = 72;
+        gameOverCanvas.style.color = 'white';
+        const youSunkString = 'You sunk';
+        const textWidth = ctx.measureText(youSunkString).width;
+        console.log(textWidth)
+        ctx.fillText(youSunkString, 400, 400)
+
+    
+    }
+
+
+    // gameOverTxt(ctx) {
+    //     ctx.fontFamily = "Deadhand";
+    //     ctx.fontSize = '72px';
+    //     ctx.color = 'black';
+    //     const youSunkString = 'You sunk';
+    //     const textWidth = ctx.measureText(youSunkString).width;
+    //     ctx.fillText(youSunkString, (ctx.width/2) - (textWidth / 2), 400)
+
+    // }
 }
