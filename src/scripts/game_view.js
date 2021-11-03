@@ -126,7 +126,7 @@ export default class GameView {
         gameOverCanvas.height = 1088;
         gameOverCanvas.position = 'absolute'
         gameOverCanvas.style.opacity = .0;
-        // gameOverCanvas.style.backgroundColor = 'black'
+        gameOverCanvas.style.backgroundColor = 'black'
         document.body.append(gameOverCanvas);
         const bgFade = setInterval(() => {
             gameOverCanvas.style.opacity = parseFloat(gameOverCanvas.style.opacity) + .03;
@@ -134,14 +134,19 @@ export default class GameView {
                 clearInterval(bgFade);
             }
         }, 20);
+
+        // setTimeout(() => {
+        //     document.body.removeChild(document.body.lastChild)
+        //     this.initialize();
+        // }, 1000);
         // this.gameOverTxt(ctx);
-        gameOverCanvas.style.fontFamily = "Deadhand";
-        gameOverCanvas.style.fontSize = '72pt';
-        gameOverCanvas.style.color = 'white';
-        const youSunkString = 'You sunk';
-        const textWidth = ctx.measureText(youSunkString).width;
-        console.log(textWidth)
-        ctx.fillText(youSunkString, 400, 400)
+        // gameOverCanvas.style.fontFamily = "Deadhand";
+        // gameOverCanvas.style.fontSize = '72pt';
+        // gameOverCanvas.style.color = 'white';
+        // const youSunkString = 'You sunk';
+        // const textWidth = ctx.measureText(youSunkString).width;
+        // console.log(textWidth)
+        // ctx.fillText(youSunkString, 400, 400)
 
     
     }
