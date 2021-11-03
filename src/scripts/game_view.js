@@ -126,7 +126,7 @@ export default class GameView {
         gameOverCanvas.height = 1088;
         gameOverCanvas.position = 'absolute'
         gameOverCanvas.style.opacity = .0;
-        gameOverCanvas.style.backgroundColor = 'black'
+        // gameOverCanvas.style.backgroundColor = 'black'
         document.body.append(gameOverCanvas);
         const bgFade = setInterval(() => {
             gameOverCanvas.style.opacity = parseFloat(gameOverCanvas.style.opacity) + .03;
@@ -136,7 +136,7 @@ export default class GameView {
         }, 20);
         // this.gameOverTxt(ctx);
         gameOverCanvas.style.fontFamily = "Deadhand";
-        gameOverCanvas.style.fontSize = 72;
+        gameOverCanvas.style.fontSize = '72pt';
         gameOverCanvas.style.color = 'white';
         const youSunkString = 'You sunk';
         const textWidth = ctx.measureText(youSunkString).width;
