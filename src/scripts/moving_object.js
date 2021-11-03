@@ -37,7 +37,7 @@ export default class MovingObject {
     }
 
     changeHeading(dh){
-        this.heading += 3 * dh;
+        this.heading += 5 * dh;
         this.heading = this.heading % 360;
     }
 
