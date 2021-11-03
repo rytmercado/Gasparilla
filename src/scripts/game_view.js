@@ -11,8 +11,8 @@ export default class GameView {
     
     initialize() {
         this.game.start();   
-        // console.log(this.game.map.length);
-        // console.log(this.game.map[0].length);
+        console.log(this.game.map.length);
+        console.log(this.game.map[0].length);
         requestAnimationFrame(this.animate.bind(this));
     }
     
@@ -40,23 +40,23 @@ export default class GameView {
                     
                     if (this.game.map[j][i] === 1 && j > 0 && i > 0 && j < 33 && i < 59) {
                         // this.context.drawImage(waterTile, 64*3, 64*4, 64, 64, i*32, j*32, 32, 32); 
-                        if (this.game.map[j][i-1] === 1 && this.game.map[j-1][i] === 1 && this.game.map[j][i+1] === 1 && this.game.map[j+1][i] === 0){
+                        if (this.game.map[j][i-1] !== 0 && this.game.map[j-1][i] !== 0 && this.game.map[j][i+1] !== 0 && this.game.map[j+1][i] !== 1){
                             this.context.drawImage(waterTile, 64, 128, 64, 64, i*32, j*32, 32, 32); // top left right
-                        } else if (this.game.map[j][i-1] === 1 && this.game.map[j-1][i] === 1 && this.game.map[j][i+1] === 0 && this.game.map[j+1][i] === 0) {
+                        } else if (this.game.map[j][i-1] !== 0 && this.game.map[j-1][i] !== 0 && this.game.map[j][i+1] !== 1 && this.game.map[j+1][i] !== 1) {
                             this.context.drawImage(waterTile, 128, 128, 64, 64, i*32, j*32, 32, 32);
-                        } else if (this.game.map[j][i-1] === 1 && this.game.map[j-1][i] === 1 && this.game.map[j][i+1] === 1 && this.game.map[j+1][i] === 1 ) {
+                        } else if (this.game.map[j][i-1] !== 0 && this.game.map[j-1][i] !== 0 && this.game.map[j][i+1] !== 0 && this.game.map[j+1][i] !== 0 ) {
                             this.context.drawImage(waterTile, 64*3, 64*4, 64, 64, i*32, j*32, 32, 32); 
-                        } else if (this.game.map[j][i-1] === 0 && this.game.map[j-1][i] === 0 && this.game.map[j][i+1] === 1 && this.game.map[j+1][i] === 1) {
+                        } else if (this.game.map[j][i-1] !== 1 && this.game.map[j-1][i] !== 1 && this.game.map[j][i+1] !== 0 && this.game.map[j+1][i] !== 0) {
                             this.context.drawImage(waterTile, 64*0, 64*0, 64, 64, i*32, j*32, 32, 32); 
-                        } else if (this.game.map[j][i-1] === 1 && this.game.map[j-1][i] === 0 && this.game.map[j][i+1] === 1 && this.game.map[j+1][i] === 1) {
+                        } else if (this.game.map[j][i-1] !== 0 && this.game.map[j-1][i] !== 1 && this.game.map[j][i+1] !== 0 && this.game.map[j+1][i] !== 0) {
                             this.context.drawImage(waterTile, 64*1, 64*0, 64, 64, i*32, j*32, 32, 32); 
-                        } else if (this.game.map[j][i-1] === 1 && this.game.map[j-1][i] === 0 && this.game.map[j][i+1] === 0 && this.game.map[j+1][i] === 1) {
+                        } else if (this.game.map[j][i-1] !== 0 && this.game.map[j-1][i] !== 1 && this.game.map[j][i+1] !== 1 && this.game.map[j+1][i] !== 0) {
                             this.context.drawImage(waterTile, 64*2, 64*0, 64, 64, i*32, j*32, 32, 32); 
-                        } else if (this.game.map[j][i-1] === 1 && this.game.map[j-1][i] === 1 && this.game.map[j][i+1] === 0 && this.game.map[j+1][i] === 1) {
+                        } else if (this.game.map[j][i-1] !== 0 && this.game.map[j-1][i] !== 0 && this.game.map[j][i+1] !== 1 && this.game.map[j+1][i] !== 0) {
                             this.context.drawImage(waterTile, 64*2, 64*1, 64, 64, i*32, j*32, 32, 32); 
-                        } else if (this.game.map[j][i-1] === 0 && this.game.map[j-1][i] === 1 && this.game.map[j][i+1] === 1 && this.game.map[j+1][i] === 0) {
+                        } else if (this.game.map[j][i-1] !== 1 && this.game.map[j-1][i] !== 0 && this.game.map[j][i+1] !== 0 && this.game.map[j+1][i] !== 1) {
                             this.context.drawImage(waterTile, 64*0, 64*2, 64, 64, i*32, j*32, 32, 32); 
-                        } else if (this.game.map[j][i-1] === 0 && this.game.map[j-1][i] === 1 && this.game.map[j][i+1] === 1 && this.game.map[j+1][i] === 1) {
+                        } else if (this.game.map[j][i-1] !== 1 && this.game.map[j-1][i] !== 0 && this.game.map[j][i+1] !== 0 && this.game.map[j+1][i] !== 0) {
                             this.context.drawImage(waterTile, 64*0, 64*1, 64, 64, i*32, j*32, 32, 32);
                         }
                     } else if ( j === 0 || i === 0 || j === 33 || i === 59) {
@@ -87,7 +87,7 @@ export default class GameView {
         this.context.lineWidth = 9
         this.context.strokeStyle = '#66ff00'
         this.context.moveTo(x-10, y-10);
-        console.log(this.game.playerShip.playerHealth)
+        // console.log(this.game.playerShip.playerHealth)
         let playerHealth = this.game.playerShip.playerHealth * 5;
         this.context.lineTo((x-10) + playerHealth, y-10);
         this.context.stroke();

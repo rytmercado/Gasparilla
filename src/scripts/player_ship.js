@@ -29,6 +29,8 @@ export default class PlayerShip extends MovingObject {
     collideTreasure(mapX, mapY){
         this.playerScore++;
         this.game.map[mapY][mapX] = 0;
+        this.game.addNewTreasure();
+        this.vel += 0.5;
     }
     collideTerrain(){
         super.collideTerrain();
