@@ -5,39 +5,34 @@ export default class GameView {
         this.context = canvas.getContext('2d');
         this.game = game;
         this.playerBoatImage = new Image();
+        this.goldCoin = new Image();
         this.initialize();
     }
     
     initialize() {
-        // window.addEventListener('resize', () => {
-        //     this.resizeCanvas();
-        // }, false);
-        // this.resizeCanvas();
         this.game.start();   
         console.log(this.game.map.length);
         console.log(this.game.map[0].length);
         requestAnimationFrame(this.animate.bind(this));
     }
-
+    
     animate() {
-        // this.context.clearRect(0, 0, 1920, 1080);
         this.game.step();
         this.redraw();
         this.drawShip(this.game.playerShip.pos[0],this.game.playerShip.pos[1]);
+        this.drawTreasure();
         requestAnimationFrame(this.animate.bind(this));
     }
     
     redraw() {
-        // debugger;
         const waterTile = new Image();
-        // console.log(waterTile);
         waterTile.src = './src/assets/tiles_sheet.png';
         waterTile.onload = () => {
             for(let j = 0; j < 34; j += 1) {
                 for(let i = 0; i < 60; i += 1) {
-
+                    
                     this.context.drawImage(waterTile, 512, 256, 64, 64, i*32, j*32, 32, 32);
-
+                    
                     if (this.game.map[j][i] === 1 && j > 0 && i > 0 && j < 33 && i < 59) {
                         // this.context.drawImage(waterTile, 64*3, 64*4, 64, 64, i*32, j*32, 32, 32); 
                         if (this.game.map[j][i-1] === 1 && this.game.map[j-1][i] === 1 && this.game.map[j][i+1] === 1 && this.game.map[j+1][i] === 0){
@@ -61,7 +56,7 @@ export default class GameView {
                         }
                     } else if ( j === 0 || i === 0 || j === 33 || i === 59) {
                         this.context.drawImage(waterTile, 64*3, 64*4, 64, 64, i*32, j*32, 32, 32); 
-
+                        
                     }
                 } 
             }
@@ -77,6 +72,23 @@ export default class GameView {
             this.context.drawImage(this.playerBoatImage, 204, 114, 66, 113,x,y, 33, 56)
         }
         this.playerBoatImage.src = this.game.playerShip.src;
+    }
+    
+    drawTreasure(){
+        
+        this.goldCoin.src = './src/assets/goldcoin.png';
+        this.goldCoin.onload = () => {
+            // console.log('here');
+            
+            for(let j = 0; j < 34; j += 1) {
+                for(let i = 0; i < 60; i += 1) {
+                    if (this.game.map[j][i] === 2) {
+                        // console.log('yay')
+                        this.context.drawImage(this.goldCoin, 0,0, 2202, 2197, i*32, j*32, 32, 32);
+                    }
+                }
+            }
+        }
     }
     
     resizeCanvas() {
