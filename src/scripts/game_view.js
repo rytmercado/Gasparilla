@@ -11,17 +11,22 @@ export default class GameView {
     
     initialize() {
         this.game.start();   
-        console.log(this.game.map.length);
-        console.log(this.game.map[0].length);
+        // console.log(this.game.map.length);
+        // console.log(this.game.map[0].length);
         requestAnimationFrame(this.animate.bind(this));
     }
     
     animate() {
+        // console.log(this.game.gameOver());
+        if (this.game.gameOver() === false) {
         this.game.step();
         this.redraw();
         this.drawShip(this.game.playerShip.pos[0],this.game.playerShip.pos[1]);
         this.drawTreasure();
         requestAnimationFrame(this.animate.bind(this));
+        } else {
+            // render game win or game lose page
+        }
     }
     
     redraw() {

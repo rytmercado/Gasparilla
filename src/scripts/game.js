@@ -61,5 +61,15 @@ export default class Game {
         this.playerShip.move();
     }
 
+    gameOver(){
+        console.log(this.playerShip.playerHealth)
+        if (this.playerShip.playerHealth <= 0 || this.playerShip.playerScore === 8) {
+            return true;
+        } else {
+            return false;
+        }
+        console.log(this.playerHealth)
+    }
+
 }
 
