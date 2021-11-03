@@ -22,7 +22,7 @@ export default class MovingObject {
         } else {
             this.pos[1] = nextY
         }
-        this.collisionCheck(nextX, nextY);
+        this.collisionCheck();
         
     }
 
@@ -41,7 +41,7 @@ export default class MovingObject {
         this.heading = this.heading % 360;
     }
 
-    collisionCheck(nextX, nextY){
+    collisionCheck(){
         let mapX = Math.floor(this.pos[0] / 32);
         let mapY = Math.floor(this.pos[1] / 32);
         let terrainTopLeft = this.game.map[mapY][mapX];

@@ -5,7 +5,7 @@ export default class Game {
     constructor() {
         this.playerShip = new PlayerShip(
             {
-                pos: [window.innerWidth/2, window.innerHeight/2],
+                pos: [540, 960],
                 vel: 0,
                 heading: 180,
                 src: './src/assets/ships_sheet.png',
