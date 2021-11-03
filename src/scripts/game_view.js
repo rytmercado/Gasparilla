@@ -72,6 +72,20 @@ export default class GameView {
             this.context.drawImage(this.playerBoatImage, 204, 114, 66, 113,x,y, 33, 56)
         }
         this.playerBoatImage.src = this.game.playerShip.src;
+        this.context.beginPath();
+        this.context.lineWidth = 8
+        this.context.strokeStyle = '#ff0000'
+        this.context.moveTo(x-10, y-10);
+        this.context.lineTo(x+40, y-10);
+        this.context.stroke();
+        this.context.beginPath();
+        this.context.lineWidth = 9
+        this.context.strokeStyle = '#66ff00'
+        this.context.moveTo(x-10, y-10);
+        console.log(this.game.playerShip.playerHealth)
+        let playerHealth = this.game.playerShip.playerHealth * 5;
+        this.context.lineTo((x-10) + playerHealth, y-10);
+        this.context.stroke();
     }
     
     drawTreasure(){
