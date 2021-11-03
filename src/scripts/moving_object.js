@@ -8,15 +8,26 @@ export default class MovingObject {
     }
 
     move(){
-        this.pos[0] = (this.pos[0] + Math.sin(this.heading * Math.PI / 180) * this.vel) % 1920;
-        this.pos[1] = (this.pos[1] - Math.cos(this.heading * Math.PI / 180) * this.vel) % window.innerHeight;
-        if (this.pos[0] <= 0) {
-            this.pos[0] = 1080;
+        let nextX = this.pos[0] + Math.sin(this.heading * Math.PI / 180) * this.vel
+        let nextY = this.pos[1] - Math.cos(this.heading * Math.PI / 180) * this.vel
+        if(nextX > 1600 || nextX < 0) {
+            this.heading = (this.heading + 180) % 360
         }
-        if (this.pos[1] <= 0) {
-            this.pos[1] = 1920;
+        else {
+            this.pos[0] = nextX;
         }
-        
+
+        if(nextY > 980 || nextY < 0) {
+            this.heading = (this.heading+180) % 360
+        } else {
+            this.pos[1] = nextY
+        }
+        let mapX = Math.floor(this.pos[0] / 32);
+        let mapY = Math.floor(this.pos[1] / 32);
+        let terrain = this.game.map[mapY][mapX];
+        if(terrain === 1) {
+            this.heading = (this.heading + 180) % 360;
+        }       
     }
 
     changeVel(dv){
