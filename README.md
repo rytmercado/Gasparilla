@@ -14,9 +14,8 @@ A rogue-like naval battle game made with vanilla JS, CSS and HTML.
 10. [Sources](#sources)
 
 ## In Gasparilla, users will be able to: <a name="description"></a>
-#### Control a pirate ship in a rogue-like naval battle game made, in order to defeat foes and plunder booty.
-#### As you complete progressively more difficult levels, you will be able to upgrade attributes of your ship.
-#### Maps will be procedurally generated using rot.js https://ondras.github.io/rot.js/hp/
+#### Control a pirate ship and collect as much gold as you can!
+#### As you collect more gold, your speed increases - be careful though. If you sink, you lose!
 #### Maps will be rendered using a freely available 2D pixel art pack on a canvas element. https://www.kenney.nl/assets/pirate-pack
 
 ## In addition, this project will include: <a name="description"></a>
@@ -33,7 +32,6 @@ A rogue-like naval battle game made with vanilla JS, CSS and HTML.
 #### -HTML
 #### -Javascript
 #### -CSS
-#### -Rot.js
 
 ## Implementation Timeline <a name="implementation-timeline"></a>
 #### 10/29/21 - 10/31/21
@@ -54,7 +52,7 @@ final bug testing, deploy, finalize readme.
 ##### You can make contributions to my project here! 
  <a href="https://github.com/rytmercado">Contribute Here</a>
 ## Illustrations <a name="illustrations"></a>
-In progress.
+<img width="960" alt="GasparillaScreenshot" src="https://user-images.githubusercontent.com/83959916/140381040-8827d0e7-075e-4d1a-8fdb-9a8237fad61a.png">
 ## Questions <a name="questions"></a>
 #### If you have any questions please reach out to me via E-Mail: rytmercado@gmail.com
 ## Status <a name="status"></a>
