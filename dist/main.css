@@ -123,7 +123,7 @@ html, body {
 }
 
 #game-canvas {
-  z-index: 1;
+  z-index: 0;
   background: transparent;
   position: absolute;
 }
@@ -137,11 +137,10 @@ html, body {
   font-size: 24px;
   text-align: center;
   color: black;
-  font-family: "Deadhand";
 }
 
 #game-over-canvas {
-  z-index: 100;
+  z-index: 101;
   background: black;
   position: absolute;
 }

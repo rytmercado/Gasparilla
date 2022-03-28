@@ -32,6 +32,7 @@ export default class GameView {
         this.drawTreasure();
         requestAnimationFrame(this.animate.bind(this));
         } else {
+            console.log('hit')
             this.gameOverScreen();
         }
     }
@@ -161,7 +162,9 @@ export default class GameView {
         gameOverCanvas.style.opacity = .0;
         gameOverCanvas.style.backgroundColor = 'black'
         gameOverCanvas.setAttribute('id', 'game-over-canvas')
-        document.body.append(gameOverCanvas);
+        const bg = document.getElementById('background')
+        bg.append(gameOverCanvas);
+        // debugger
         const bgFade = setInterval(() => {
             gameOverCanvas.style.opacity = parseFloat(gameOverCanvas.style.opacity) + .03;
             if (parseFloat(gameOverCanvas.style.opacity) >= 1) {
