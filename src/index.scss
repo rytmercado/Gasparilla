@@ -10,8 +10,21 @@ html, body {
     display: block;  /* No floating content on sides */
   }
 
-  #game-canvas {
+  #map-canvas {
     z-index: -1;
+    position: absolute;
+  }
+
+  #game-canvas {
+    z-index: 0;
+    background: transparent;
+    position: absolute;
+  }
+
+  #game-over-canvas {
+    z-index: 100;
+    background: black;
+    position: absolute;
   }
 
 
