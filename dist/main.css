@@ -118,12 +118,12 @@ html, body {
 }
 
 #map-canvas {
-  z-index: -1;
+  z-index: 0;
   position: absolute;
 }
 
 #game-canvas {
-  z-index: 0;
+  z-index: 1;
   background: transparent;
   position: absolute;
 }
@@ -137,6 +137,19 @@ html, body {
 .ui {
   font-size: 32px;
   border: 0;
+}
+@font-face {
+  .ui {
+    font-family: "Deadhand";
+    src: url("./assets/TreasureMapDeadhand-yLA3.ttf");
+  }
+}
+
+.background {
+  height: 100vh;
+  width: 100vw;
+  background-color: #FAE8C2;
+  z-index: -100;
 }
 
 @font-face {
