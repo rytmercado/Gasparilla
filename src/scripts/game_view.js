@@ -78,9 +78,16 @@ export default class GameView {
         // this.redraw();
         this.playerBoatImage.onload = () => {
             // this.gameContext.clearRect();
-            this.gameContext.clearRect(x-50, y-50, 200, 200);
+            this.gameContext.clearRect(0, 0, this.gameCanvas.width, this.gameCanvas.height);
+            // this.gameContext.save();
+            this.gameContext.setTransform(1,0,0,1,x,y)
+            // this.gameContext.translate(x, y);
+            this.gameContext.rotate(this.game.playerShip.heading*Math.PI/180);
             
-            this.gameContext.drawImage(this.playerBoatImage, 204, 114, 66, 113,x,y, 33, 56)
+            // this.gameContext.drawImage(this.playerBoatImage, 204, 114, 66, 113,x,y, 33, 56)
+            this.gameContext.drawImage(this.playerBoatImage, -0, 0, 33, 114/2)
+            this.gameContext.setTransform(1,0,0,1,0,0)
+            this.gameContext.restore();
         }
         this.playerBoatImage.src = this.game.playerShip.src;
         this.drawHealthBar(x,y);
