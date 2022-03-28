@@ -14,6 +14,9 @@ export default class GameView {
     }
     
     initialize() {
+        // console.log(this.gameCanvas.getContext('2d'))
+        window.addEventListener('keydown', e => {
+        })
         this.gameContext.clearRect(0, 0, 1920, 1088);
         this.game.start();
         this.redraw();
@@ -24,7 +27,7 @@ export default class GameView {
         // console.log(this.game.gameOver());
         if (this.game.gameOver() === false) {
         this.game.step();
-        
+        this.setScore();
         this.drawShip(this.game.playerShip.pos[0],this.game.playerShip.pos[1]);
         this.drawTreasure();
         requestAnimationFrame(this.animate.bind(this));
@@ -32,6 +35,20 @@ export default class GameView {
             this.gameOverScreen();
         }
     }
+
+    setScore() {
+        const scoreboard = document.getElementById('scoreboard');
+        const health = document.getElementById('health');
+        const heading = document.getElementById('heading');
+        const velocity = document.getElementById('velocity');
+        scoreboard.innerHTML = 'Score: ' + this.game.playerShip.playerScore;
+        health.innerHTML = 'Health: ' + this.game.playerShip.playerHealth + 'HP';
+        heading.innerHTML = 'Heading: ' + this.game.playerShip.heading + '°';
+        velocity.innerHTML = 'Velocity: ' + this.game.playerShip.vel + ' kts';
+        
+
+    }
+
     
     redraw() {
         const waterTile = new Image();
@@ -85,7 +102,7 @@ export default class GameView {
             this.gameContext.rotate(this.game.playerShip.heading*Math.PI/180);
             
             // this.gameContext.drawImage(this.playerBoatImage, 204, 114, 66, 113,x,y, 33, 56)
-            this.gameContext.drawImage(this.playerBoatImage, -0, 0, 33, 114/2)
+            this.gameContext.drawImage(this.playerBoatImage, -33, -114/2)
             this.gameContext.setTransform(1,0,0,1,0,0)
             this.gameContext.restore();
         }
@@ -97,16 +114,16 @@ export default class GameView {
         this.gameContext.beginPath();
         this.gameContext.lineWidth = 8
         this.gameContext.strokeStyle = '#ff0000'
-        this.gameContext.moveTo(x-10, y-10);
-        this.gameContext.lineTo(x+40, y-10);
+        this.gameContext.moveTo(x-40, y-70);
+        this.gameContext.lineTo(x+40, y-70);
         this.gameContext.stroke();
         this.gameContext.beginPath();
         this.gameContext.lineWidth = 9
         this.gameContext.strokeStyle = '#66ff00'
-        this.gameContext.moveTo(x-10, y-10);
+        this.gameContext.moveTo(x-40, y-70);
         // console.log(this.game.playerShip.playerHealth)
-        let playerHealth = this.game.playerShip.playerHealth * 5;
-        this.gameContext.lineTo((x-10) + playerHealth, y-10);
+        let playerHealth = this.game.playerShip.playerHealth * 8;
+        this.gameContext.lineTo((x-40) + playerHealth, y-70);
         this.gameContext.stroke();
 
     }
