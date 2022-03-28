@@ -22,6 +22,18 @@ html, body {
     position: absolute;
   }
 
+  #instruction-canvas {
+    width: 1920px;
+    height: 1088px;
+    z-index: 100;
+    background: white;
+    position: absolute;
+    font-size: 24px;
+    text-align: center;
+    color: black;
+    font-family: 'Deadhand';
+  }
+
   #game-over-canvas {
     z-index: 100;
     background: black;
@@ -31,10 +43,7 @@ html, body {
   .ui {
     font-size: 32px;
     border: 0;
-    @font-face {
-      font-family: "Deadhand";
-      src: url('./assets/TreasureMapDeadhand-yLA3.ttf');
-    };
+    
   }
 
   .background {
@@ -42,8 +51,9 @@ html, body {
     width: 100vw;
     background-color: #FAE8C2;
     z-index: -100;
+
   }
 
 
 
-  @font-face { font-family: "Deadhand"; src: url('./assets/TreasureMapDeadhand-yLA3.ttf') format("truetype"); } 
+  @font-face { font-family: 'Deadhand'; src: url('./assets/TreasureMapDeadhand-yLA3.ttf') format("truetype"); } 
