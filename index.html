@@ -13,8 +13,11 @@
 
     <body>
         <div id='background' class="background">
-            <div class="flex-center" id="instruction-canvas"style="position:absolute; left:0px; top:0px;" width='1920' height="1088">
+            <div class="flex-center" id="instruction-canvas"style="position:absolute; left:0px; top:0px;" width='1920' height="1000">
+                <img id="scroll" src="src/assets/scroll.png" alt="" title="" />
                 <div>
+                    <h1>GASPARILLA</h1>
+                    <br>
                     <p>Controls:</p>
                     <p>W: Speed Up</p>
                     <p>A: Turn Left</p>
@@ -28,13 +31,16 @@
                 </div>
             </div>
 
-            <canvas id="map-canvas" style="position:absolute; left:0px; top:0px;" width='1920' height="1088"></canvas>
-            <canvas id="game-canvas" style='position:absolute; left:0px; top:0px;' width='1920' height='1088'></canvas>
+            <canvas id="map-canvas" style="position:absolute; left:0px; top:0px;" width='1920' height="1000"></canvas>
+            <canvas id="game-canvas" style='position:absolute; left:0px; top:0px;' width='1920' height='1000'></canvas>
             
-            <p id="scoreboard" class="ui" style='position:absolute; left:0px; top:0px;'></p>
-            <p id="health" class="ui" style='position:absolute; left:0px; top:40px;'></p>
-            <p id="heading" class="ui" style='position:absolute; left:0px; top:80px;'></p>
-            <p id="velocity" class="ui" style='position:absolute; left:0px; top:120px;'></p>
+            <div>
+
+                <p id="scoreboard" class="ui" style='position:absolute; left:0px; top:0px;'></p>
+                <p id="health" class="ui" style='position:absolute; left:0px; top:40px;'></p>
+                <p id="heading" class="ui" style='position:absolute; left:0px; top:80px;'></p>
+                <p id="velocity" class="ui" style='position:absolute; left:0px; top:120px;'></p>
+            </div>
         </div>
     </body>
 

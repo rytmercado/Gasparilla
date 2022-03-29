@@ -118,6 +118,10 @@ html, body {
   font-family: Deadhand;
 }
 
+h1 {
+  font-size: 72px;
+}
+
 #map-canvas {
   z-index: 0;
   position: absolute;
@@ -131,14 +135,17 @@ html, body {
 
 #instruction-canvas {
   width: 1920px;
-  height: 1088px;
+  height: 1000px;
   z-index: 100;
-  background: white;
+  background: #B0E9FC;
   position: absolute;
-  font-size: 60px;
+  font-size: 48px;
   text-align: center;
   color: black;
   font-family: Deadhand;
+}
+#instruction-canvas div {
+  z-index: 100;
 }
 
 #game-over-canvas {
@@ -163,6 +170,13 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#scroll {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
 @font-face {
