@@ -35,6 +35,6 @@ export default class PlayerShip extends MovingObject {
     collideTerrain(){
         super.collideTerrain();
         this.playerHealth--;
-        console.log(this.playerHealth);
+        // console.log(this.playerHealth);
     }
 }
